@@ -1,0 +1,11 @@
+package test;
+
+import com.example.androidtest.CalculateActivity;
+
+import junit.framework.TestCase;
+
+public class CalculateActivityTest extends TestCase {
+	CalculateActivity cA = new CalculateActivity();
+	
+	int a= cA.calculate("1,4,5");
+}

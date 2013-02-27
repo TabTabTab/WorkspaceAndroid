@@ -1,0 +1,7 @@
+package com.example.androidtest;
+
+import junit.framework.TestCase;
+
+public class CalculateActivityTest extends TestCase {
+
+}

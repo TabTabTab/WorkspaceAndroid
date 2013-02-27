@@ -1,0 +1,36 @@
+package com.example.texttest;
+
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.view.Menu;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+	
+	public void sendMessage(View view){
+		PendingIntent pi = PendingIntent.getActivity(this, 0,
+	            new Intent(this, MainActivity.class), 0);
+		SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("0736733569", null, "Spotify är ledigt nu", pi, null);
+//		startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("sms:"
+//                + "0736733569")));
+	}
+
+}
